@@ -24,7 +24,7 @@ namespace BatsyBat
 			BottledBatsyBomb.RequiredItems.Add("SurtlingCore", 1);
 			BottledBatsyBomb.CraftAmount = 1;
 
-			Creature WildBatsyBite = new("batsybat", "WildBatsyBite")            //add creature
+			Creature WildBatsyBat = new("batsybat", "WildBatsyBat")            //add creature
 			{
 				Biome = Heightmap.Biome.Plains,
 				CanSpawn = true,
@@ -37,17 +37,17 @@ namespace BatsyBat
 				SpecificSpawnTime = SpawnTime.Night,
 				Maximum = 1
 			};
-			WildBatsyBite.Drops["LeatherScraps"].Amount = new Range(1, 2);
-			WildBatsyBite.Drops["LeatherScraps"].DropChance = 100f;
-			WildBatsyBite.Drops["BoneFragments"].Amount = new Range(1, 2);
-			WildBatsyBite.Drops["BoneFragments"].DropChance = 10f;
-			WildBatsyBite.Drops["Guck"].Amount = new Range(1, 2);
-			WildBatsyBite.Drops["Guck"].DropChance = 20f;
+			WildBatsyBat.Drops["LeatherScraps"].Amount = new Range(1, 2);
+			WildBatsyBat.Drops["LeatherScraps"].DropChance = 100f;
+			WildBatsyBat.Drops["BoneFragments"].Amount = new Range(1, 2);
+			WildBatsyBat.Drops["BoneFragments"].DropChance = 10f;
+			WildBatsyBat.Drops["Guck"].Amount = new Range(1, 2);
+			WildBatsyBat.Drops["Guck"].DropChance = 20f;
 
 
 			GameObject BottledBatsyProjectile = ItemManager.PrefabManager.RegisterPrefab("batsybat", "BottledBatsyProjectile"); //register projectile
 
-			GameObject MissBatsyBite = ItemManager.PrefabManager.RegisterPrefab("batsybat", "MissBatsyBite"); //register projectile
+			GameObject MissBatsyBat = ItemManager.PrefabManager.RegisterPrefab("batsybat", "MissBatsyBat"); //register projectile
 
 
 			new Harmony(ModName).PatchAll();			
@@ -60,7 +60,7 @@ namespace BatsyBat
 		{
 			static void Postfix(MonsterAI __instance)
 			{
-				if (Player.m_localPlayer && __instance.gameObject.name.Contains("MissBatsyBite") && __instance.m_nview.IsOwner())
+				if (Player.m_localPlayer && __instance.gameObject.name.Contains("MissBatsyBat") && __instance.m_nview.IsOwner())
 				{
 					__instance.ResetPatrolPoint();
 					__instance.SetFollowTarget(Player.m_localPlayer.gameObject);
