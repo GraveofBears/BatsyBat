@@ -12,7 +12,7 @@ namespace BatsyBat
 	public class BatsyBat : BaseUnityPlugin
 	{
 		private const string ModName = "BatsyBat";
-		private const string ModVersion = "0.0.2";
+		private const string ModVersion = "0.0.3";
 		private const string ModGUID = "org.bepinex.plugins.batsybat";
 
 		public void Awake()
